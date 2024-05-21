@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cat vs Dog Classification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-image: linear-gradient(
+          to bottom right,
+          #a8d847,
+          #c2845e
+        ); /* Gradient background */
+      }
+      h1 {
+        color: #333; /* Dark gray text color */
+      }
+      input[type="file"] {
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+        border: 2px solid #ccc; /* Light gray border */
+        border-radius: 5px;
+        background-color: #fff; /* White background */
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #40a343; /* Green button color */
+        color: #fff; /* White text color */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Smooth transition effect */
+      }
+      input[type="submit"]:hover {
+        background-color: #1e6e22; /* Darker green color on hover */
+      }
+      img {
+        max-width: 300px; /* Limit image width */
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+      }
+      footer {
+        margin-top: 50px;
+        color: #666; /* Gray text color */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cat vs Dog Image Classification</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+      <!-- Upload input -->
+      <input type="file" name="file" accept="image/*" />
+      <!-- Submit button -->
+      <input type="submit" value="Upload and Predict" />
+    </form>
+    <!-- Images of cats and dogs for visual appeal -->
+    <div>
+      <img
+        src="https://images.pexels.com/photos/850602/pexels-photo-850602.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Dogs"
+      />
+      <img
+        src="https://images.pexels.com/photos/257532/pexels-photo-257532.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Cats"
+      />
+    </div>
+    <div id="result"></div>
+    <!-- Made with love footer -->
+    <footer style="color: rgb(5, 29, 123); font-size: larger">
+      Made with &hearts; by Anurag
+    </footer>
+    <script>
+      document.getElementById("upload-form").onsubmit = function (event) {
+        event.preventDefault();
+
+        var formData = new FormData();
+        var fileInput = document.getElementById("file-input");
+        formData.append("file", fileInput.files[0]);
+
+        fetch("/predict", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("result").innerText =
+              "Predicted: " + data.result;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: rgb(249, 234, 216);
+      }
+      h1 {
+        color: #2c3c13;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+      #result {
+        border: 1px solid rgb(94, 76, 43);
+        border-radius: 99%;
+        border-width: thin;
+        margin-top: 20px;
+        font-size: 24px;
+        color: #0b2675;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Prediction Result</h1>
+    <div id="result">Predicted: {{ result }}</div>
+    <img
+      src="{{ url_for('static', filename='prediction.png') }}"
+      alt="Prediction Image"
+    />
+  </body>
+</html>
