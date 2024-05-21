@@ -1,7 +1,7 @@
 # Cat vs Dog Classification Model
 
 <h1>Welcome to My Project</h1>
-🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶
+🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶🐱🐶
 <br>
 <br>
 Check out my <a href="https://creativeag-catdogclassify.streamlit.app/">project</a> for more information.
