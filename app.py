@@ -91,9 +91,9 @@ for row in range(rows):
 #Accuracy graph
 expander = st.expander("View Model Training and Validation Results")
 expander.write("Confusion Matrix: ")
-expander.image("images\confusion_mat.png", use_column_width=True)
+expander.image("./images/confusion_mat.png", use_column_width=True)
 expander.write("Graphs: ")
-expander.image("images\plot.png", use_column_width=True)
+expander.image("./images/plot.png", use_column_width=True)
 # Footer
 st.write("\n\n\n\n")
 st.markdown("---")
