@@ -22,7 +22,7 @@ def predict(image_path, model):
 
 # Streamlit app code
 st.set_page_config(
-    page_title="Classification of Handwritten Digits",
+    page_title="Cats vs Dogs Classifier",
     layout="centered",
     initial_sidebar_state="expanded",
     menu_items={
