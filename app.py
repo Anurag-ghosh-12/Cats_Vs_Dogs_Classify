@@ -67,7 +67,7 @@ if uploaded_file is not None:
     st.write('Classifying...')
     label = predict(temp_image_path, model)
     st.balloons()
-    st.write(f'This is a **{label}**!')
+    st.markdown(f'# This is a **{label}**!')
     st.image(image, caption='Uploaded Image', use_column_width=True)
 
 #dummy images
