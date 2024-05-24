@@ -58,8 +58,7 @@ uploaded_file = st.file_uploader('Choose an image...', type=['jpg', 'jpeg', 'png
 if uploaded_file is not None:
     # Display the uploaded image
     image = Image.open(uploaded_file)
-    st.image(image, caption='Uploaded Image', use_column_width=True)
-
+    
     # Save the uploaded image temporarily
     temp_image_path = 'temp_image.png'
     image.save(temp_image_path)
@@ -67,7 +66,10 @@ if uploaded_file is not None:
     # Make a prediction
     st.write('Classifying...')
     label = predict(temp_image_path, model)
+    st.balloons()
     st.write(f'This is a **{label}**!')
+    st.image(image, caption='Uploaded Image', use_column_width=True)
+
 #dummy images
 expander = st.expander("Some real life images to try with...")
 expander.write("Just drag-and-drop your chosen image above ")
